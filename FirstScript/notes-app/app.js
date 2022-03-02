@@ -27,7 +27,7 @@ yargs.command({
     command:'read',
     describe:'reading notes',
     handler: ()=>{
-        console.log("Reading notes!!")
+        console.log("Reading notes!")
     }
 })
 
