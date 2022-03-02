@@ -23,5 +23,16 @@ yargs.command({
         console.log("Listing notes!!")
     }
 })
+yargs.command({
+    command:'read',
+    describe:'reading notes',
+    handler: ()=>{
+        console.log("Reading notes!!")
+    }
+})
 
-console.log(yargs.argv);
+console.log(yargs.argv)
+
+// git add ./
+// git commit -m "Node"
+// git push origin main
