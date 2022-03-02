@@ -1,13 +1,27 @@
-// const validator = require("validator");
-// const add = require("./utils");
+const yargs = require("yargs");
 const chalk = require("chalk");
 const notes = require("./notes");
 
-const command = process.argv[2];
-console.log(command);
-if (command === "add") console.log("Adding");
-else console.log("Removing");
-// console.log(chalk.green("Success!!!"));
-// console.log(chalk.yellow.inverse("Fuck You"));
-// const sum = add(4, 6);
-// console.log(sum);
+yargs.command({
+    command:'add',
+    describe:'Add new note',
+    handler: ()=>{
+        console.log("Adding a new Note!!")
+    }
+})
+yargs.command({
+    command:'remove',
+    describe:'Remove a note',
+    handler: ()=>{
+        console.log("Removing a Note!!")
+    }
+})
+yargs.command({
+    command:'list',
+    describe:'Listing notes',
+    handler: ()=>{
+        console.log("Listing notes!!")
+    }
+})
+
+console.log(yargs.argv);
