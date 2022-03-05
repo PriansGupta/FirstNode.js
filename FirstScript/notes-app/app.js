@@ -1,12 +1,26 @@
 const yargs = require("yargs");
 const chalk = require("chalk");
 const notes = require("./notes");
+const { string } = require("yargs");
 
 yargs.command({
   command: "add",
   describe: "Add new note",
-  handler: () => {
-    console.log("Adding a new Note!!");
+  builder: {
+    title: {
+      describe: "Note title",
+      demandOption: true,
+      type: "string",
+    },
+    body: {
+      describe: "This is the body",
+      demandOption: true,
+      type: "string",
+    },
+  },
+  handler: (argv) => {
+    console.log("Title: " + argv.title);
+    console.log("Body: "+argv.body)
   },
 });
 yargs.command({
