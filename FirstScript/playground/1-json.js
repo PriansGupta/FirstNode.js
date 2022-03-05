@@ -1,9 +1,12 @@
-const book = {
-  title: "Ego is the Enemy",
-  author: "Priyansh Gupta",
-};
+const { getCipherInfo } = require("crypto");
+const fs = require("fs");
 
-const bookJson = JSON.stringify(book);
+const jsondata = fs.readFileSync("1-json.json");
 
-console.log(bookJson);
+const stringifyy = jsondata.toString();
+const object=JSON.parse(stringifyy)
+object.Age=20 
+object.planet="Mars" 
+const newSt=JSON.stringify(object)
+fs.writeFileSync("1-json.json",newSt);
 
