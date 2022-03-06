@@ -1,3 +1,4 @@
+const { default: chalk } = require("chalk");
 const fs = require("fs");
 const { load } = require("signal-exit");
 
@@ -29,9 +30,12 @@ const RemoveNote = (title) => {
     return note.title !== title;
   });
 
-//   if (DuplicateNotes.length() == notes.length())
-    // console.log(notes.length());
+  if (DuplicateNotes.length==notes.length)
+  console.log(chalk.red("Item not Present"))  
   
+  else
+  console.log(chalk.green("Removed"))  
+
     AddToFile(DuplicateNotes);
 };
 

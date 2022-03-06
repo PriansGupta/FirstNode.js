@@ -40,7 +40,6 @@ yargs.command({
   },
   handler: (argv) => {
     objectNotes.RemoveNote(argv.title)
-    console.log("Removing")
   },
 });
 yargs.command({
