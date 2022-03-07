@@ -7,6 +7,8 @@ const getNotes = function () {
   return msg;
 };
 
+debugger
+
 const AddToFile = (notes) => {
   const stringFy = JSON.stringify(notes);
   fs.writeFileSync("Notes.json", stringFy);
