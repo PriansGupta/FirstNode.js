@@ -53,7 +53,7 @@ yargs.command({
   command: "read",
   describe: "reading notes",
   handler: (argv) => {
-    console.log("Reading notes!");
+    objectNotes.ReadNote(argv.title);
   },
 });
 
