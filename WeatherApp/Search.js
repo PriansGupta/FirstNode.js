@@ -1,4 +1,3 @@
-// const request = require("request");
 const Geocode = require("./Geocode");
 
 const Search = (name) => {
