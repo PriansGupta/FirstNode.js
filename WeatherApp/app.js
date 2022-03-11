@@ -6,7 +6,7 @@ yargs.command({
   describe: "Searching the Temperature",
   builder: {
     title: {
-      describe: "City name",
+      describe: "City",
       demandOption: true,
       type: "string",
     },
