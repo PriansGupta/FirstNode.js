@@ -1,0 +1,1 @@
+console.log("This is remote Javascript File")
