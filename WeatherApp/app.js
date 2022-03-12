@@ -3,7 +3,7 @@ const search = require("./Search");
 
 yargs.command({
   command: "search",
-  describe: "Searching the Temperature",
+  describe: "Searching",
   builder: {
     title: {
       describe: "City",
