@@ -1,13 +1,12 @@
-h1{
-    color: red;
+h1 {
+  color: red;
 }
-img{
-    width: 200px;
+img {
+  width: 200px;
 }
-*{
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+* {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
