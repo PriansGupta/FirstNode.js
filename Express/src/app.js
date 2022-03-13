@@ -1,12 +1,16 @@
 const express = require("express");
 const path = require("path");
-const hbs=require('hbs')
+const hbs = require("hbs");
 
 const app = express();
 
+const partialsPath = path.join(__dirname, "../public/templates/partials");
+
 app.set("view engine", "hbs");
+app.set("views", path.join(__dirname, "../public/templates/views"));
+hbs.registerPartials(partialsPath);
+
 app.use(express.static(path.join(__dirname, "../public")));
-app.set("views", path.join(__dirname, "../public/templates"));
 
 app.get("", (req, res) => {
   res.render("index", {
