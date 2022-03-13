@@ -9,7 +9,10 @@ app.set('views', path.join(__dirname, '../public/views'));
 
 
 app.get('',(req,res)=>{
-  res.render('index')
+  res.render('index',{
+    Title:"Weather App",
+    Name:"Priyansh Gupta"
+  })
 })
 
 app.listen(3000, () => {
