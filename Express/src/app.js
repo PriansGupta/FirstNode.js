@@ -22,9 +22,13 @@ app.get("", (req, res) => {
 app.get("/about", (req, res) => {
   res.render("about", {
     Title: "About",
-    Footer: "Created by: Priyansh Gupta",
   });
 });
+
+app.get('*',(req,res)=>{
+  res.send("My 404 Page")
+})
+
 app.listen(3000, () => {
   console.log("Server is Up");
 });
