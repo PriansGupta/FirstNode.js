@@ -25,9 +25,17 @@ app.get("/about", (req, res) => {
   });
 });
 
-app.get('*',(req,res)=>{
-  res.send("My 404 Page")
-})
+app.get("/about/*", (req, res) => {
+  res.render("Error", {
+    Data: "Nothing about found",
+  });
+});
+
+app.get("*", (req, res) => {
+  res.render("Error", {
+    Data: "No such Page Found",
+  });
+});
 
 app.listen(3000, () => {
   console.log("Server is Up");
