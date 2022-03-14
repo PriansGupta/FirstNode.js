@@ -29,6 +29,12 @@ app.get("/about/*", (req, res) => {
     Data: "Nothing about found",
   });
 });
+app.get("/Search",(req,res)=>{
+  if(!req.query.address)
+  return res.send("Please provide an Address")
+
+  res.send([{Address:req.query.address}])
+})
 
 app.get("*", (req, res) => {
   res.render("Error", {
