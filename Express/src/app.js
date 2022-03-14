@@ -1,4 +1,6 @@
 const express = require("express");
+const yargs = require("yargs");
+const search = require("./Search");
 const path = require("path");
 const hbs = require("hbs");
 
@@ -29,12 +31,11 @@ app.get("/about/*", (req, res) => {
     Data: "Nothing about found",
   });
 });
-app.get("/Search",(req,res)=>{
-  if(!req.query.address)
-  return res.send("Please provide an Address")
+app.get("/Search", (req, res) => {
+  if (!req.query.address) return res.send("Please provide an Address");
 
-  res.send([{Address:req.query.address}])
-})
+  res.send((req.query.address));
+});
 
 app.get("*", (req, res) => {
   res.render("Error", {
@@ -45,3 +46,20 @@ app.get("*", (req, res) => {
 app.listen(3000, () => {
   console.log("Server is Up");
 });
+
+yargs.command({
+  command: "search",
+  describe: "Searching",
+  builder: {
+    title: {
+      describe: "City",
+      demandOption: true,
+      type: "string",
+    },
+  },
+  handler: (argv) => {
+    search.Search(argv.title);
+  },
+});
+
+yargs.parse();
