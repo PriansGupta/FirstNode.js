@@ -14,8 +14,7 @@ app.use(express.static(path.join(__dirname, "../public")));
 
 app.get("", (req, res) => {
   res.render("index", {
-    Title: "Home",
-    Name: "Priyansh Gupta",
+    Title: "Weather",
   });
 });
 
