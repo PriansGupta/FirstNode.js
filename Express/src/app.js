@@ -40,7 +40,7 @@ app.get("/Search", (req, res) => {
     if (error) {
       res.send(error);
     } else {
-      weather({ lat: data.latitude, lon: data.longitude }, (error, data) => {
+      weather({ lat: data.latitude, lon: data.longitude,Place:name }, (error, data) => {
         if (error) res.send(error);
         else {
           res.send(data);

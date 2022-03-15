@@ -12,6 +12,7 @@ const weather = (address, callback) => {
       const description = response.body.current.weather_descriptions[0];
 
       callback(undefined, {
+        Place:address.Place,
         Temperature: Temperature,
         description: description,
       });
