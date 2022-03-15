@@ -3,14 +3,11 @@ const Geocode = require("./Geocode");
 
 const Search = (name) => {
   Geocode(name, (error, data) => {
-    if (error) console.log(error);
+    if (error) {
+      return error;
+    }
     else
-      console.log(
-        "Temperature: " +
-          data.Temperature +
-          " Weather conditions: " +
-          data.description
-      );
+      return data;
   });
 };
 

@@ -34,7 +34,9 @@ app.get("/about/*", (req, res) => {
 app.get("/Search", (req, res) => {
   if (!req.query.address) return res.send("Please provide an Address");
 
-  res.send(search.Search(req.query.address));
+  const response = search.Search(req.query.address);
+  console.log(response);
+  // res.send();
 });
 
 app.get("*", (req, res) => {
@@ -46,4 +48,3 @@ app.get("*", (req, res) => {
 app.listen(3000, () => {
   console.log("Server is Up");
 });
-
