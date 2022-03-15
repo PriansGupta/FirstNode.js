@@ -1,6 +1,6 @@
 const express = require("express");
-const yargs = require("yargs");
-const search = require("./Search");
+const weather = require("./Weather");
+const Geocode = require("./Geocode");
 const path = require("path");
 const hbs = require("hbs");
 
@@ -34,8 +34,21 @@ app.get("/about/*", (req, res) => {
 app.get("/Search", (req, res) => {
   if (!req.query.address) return res.send("Please provide an Address");
 
-  const response = search.Search(req.query.address);
-  console.log(response);
+  const name = req.query.address;
+
+  Geocode(name, (error, data) => {
+    if (error) {
+      res.send(error);
+    } else {
+      weather({ lat: data.latitude, lon: data.longitude }, (error, data) => {
+        if (error) res.send(error);
+        else {
+          res.send(data);
+        }
+      });
+    }
+  });
+
   // res.send();
 });
 
