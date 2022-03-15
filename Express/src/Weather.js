@@ -14,7 +14,7 @@ const weather = (address, callback) => {
       callback(undefined, {
         Place:address.Place,
         Temperature: Temperature,
-        description: description,
+        Weather: description,
       });
     }
   });
