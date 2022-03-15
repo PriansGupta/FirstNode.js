@@ -6,7 +6,7 @@ const weather = (address, callback) => {
 
   request({ url: url, json: true }, (error, response) => {
     if (error) callback("Unable to connect", undefined);
-    else if (response.body.error) callback("Unable to connect", undefined);
+    else if (response.body.error) callback("No such Location found", undefined);
     else {
       const Temperature = response.body.current.temperature;
       const description = response.body.current.weather_descriptions[0];

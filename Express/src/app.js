@@ -34,7 +34,7 @@ app.get("/about/*", (req, res) => {
 app.get("/Search", (req, res) => {
   if (!req.query.address) return res.send("Please provide an Address");
 
-  res.send((req.query.address));
+  res.send(search.Search(req.query.address));
 });
 
 app.get("*", (req, res) => {
@@ -47,19 +47,3 @@ app.listen(3000, () => {
   console.log("Server is Up");
 });
 
-yargs.command({
-  command: "search",
-  describe: "Searching",
-  builder: {
-    title: {
-      describe: "City",
-      demandOption: true,
-      type: "string",
-    },
-  },
-  handler: (argv) => {
-    search.Search(argv.title);
-  },
-});
-
-yargs.parse();
