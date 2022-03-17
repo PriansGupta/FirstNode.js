@@ -7,7 +7,9 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   msg1.textContent = "LOADING.....";
   const location = Search.value;
-
+  
+  if(location.length!==0)
+  {
   fetch("http://localhost:3000/Search?address=" + location).then((response) => {
     response.json().then((data) => {
       if (data.error || data.message) msg1.textContent = data.message;
@@ -22,4 +24,8 @@ form.addEventListener("submit", (e) => {
       }
     });
   });
+}
+else{
+  msg1.textContent ="Please enter a Location to search"
+}
 });
