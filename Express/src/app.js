@@ -48,8 +48,6 @@ app.get("/Search", (req, res) => {
       });
     }
   });
-
-  // res.send();
 });
 
 app.get("*", (req, res) => {
