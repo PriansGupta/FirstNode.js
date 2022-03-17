@@ -32,28 +32,31 @@ app.get("/about/*", (req, res) => {
   });
 });
 
-const Search=()=>{
+const Search=(Place)=>{
   
+  app.get("/Search", (req, res) => {
+    if (!Place) return res.send("Please provide an Address");
+  
+    const name = Place;
+  
+    Geocode(name, (error, data) => {
+      if (error) {
+        res.send(error);
+      } else {
+        weather({ lat: data.latitude, lon: data.longitude,Place:name }, (error, data) => {
+          if (error) res.send(error);
+          else {
+            res.send(data);
+            console.log(data);
+          }
+        });
+      }
+    });
+  });
+
 }
 
-app.get("/Search", (req, res) => {
-  if (!req.query.address) return res.send("Please provide an Address");
 
-  const name = req.query.address;
-
-  Geocode(name, (error, data) => {
-    if (error) {
-      res.send(error);
-    } else {
-      weather({ lat: data.latitude, lon: data.longitude,Place:name }, (error, data) => {
-        if (error) res.send(error);
-        else {
-          res.send(data);
-        }
-      });
-    }
-  });
-});
 
 app.get("*", (req, res) => {
   res.render("Error", {
@@ -64,3 +67,5 @@ app.get("*", (req, res) => {
 app.listen(3000, () => {
   console.log("Server is Up");
 });
+
+module.exports=Search;
