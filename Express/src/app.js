@@ -31,6 +31,11 @@ app.get("/about/*", (req, res) => {
     Data: "Nothing about found",
   });
 });
+
+const Search=()=>{
+  
+}
+
 app.get("/Search", (req, res) => {
   if (!req.query.address) return res.send("Please provide an Address");
 
