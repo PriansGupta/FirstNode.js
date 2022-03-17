@@ -6,12 +6,15 @@
     <title>Weather</title>
     <link rel="stylesheet" href="./CSS/style.css" />
     <link rel="icon" href="../../Images/icon.png">
-    <script src="../../js/app.js"></script>
   </head>
   <body>
     {{>header}}
-    <p>Use this site to get your Weather!!</p>
+    <form action="">
+      <input type="text" placeholder="Location">
+      <button>Search</button>
+    </form>
     {{>footer}}
+    <script src="../../js/app.js"></script>
     
   </body>
 </html>
