@@ -1,7 +1,8 @@
 const request = require("request");
 
 const weather = (address, callback) => {
-  const url = `http://api.weatherstack.com/current?access_key=69deb58529f2280c0a95575913b5df3d&query=${address.lon},${address.lat}`;
+  const url = `http://api.weatherstack.com/current?access_key=449b8cf20027e2f7ddf7c69940787eda
+  &query=${address.lon},${address.lat}`;
 
   request({ url: url, json: true }, (error, response) => {
     if (error) callback({ message: "Unable to connect" }, undefined);
