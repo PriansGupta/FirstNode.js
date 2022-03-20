@@ -6,7 +6,7 @@ const Geocode = (address, callback) => {
 
   request({ url: url, json: true }, (error, response) => {
     console.log(lat = response.body.features[0].center[0])
-    console.log(lat = response.body.features[0].center[1])
+  
     if (error) callback({ message: "Unable to connect-1" }, undefined);
     else if (response.body.features.length === 0)
       callback({ message: "No such Location found" }, undefined);
