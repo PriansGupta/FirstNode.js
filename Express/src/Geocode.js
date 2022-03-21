@@ -15,5 +15,4 @@ const Geocode = (address, callback) => {
     }
   });
 };
-
 module.exports = Geocode;
