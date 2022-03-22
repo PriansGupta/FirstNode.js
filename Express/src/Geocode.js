@@ -7,7 +7,7 @@ const Geocode = (address, callback) => {
   request({ url: url, json: true }, (error, response) => {
     if (error) callback({ message: "Unable to connect-1" }, undefined);
     else if (response.body.features.length === 0)
-      callback({ message: "No such Location found" }, undefined);
+      callback({ message: "Not found" }, undefined);
     else {
       const lat = response.body.features[0].center[0];
       const lon = response.body.features[0].center[1];
