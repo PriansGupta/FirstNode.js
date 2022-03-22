@@ -4,7 +4,7 @@ const weather = (address, callback) => {
   const url = "http://api.weatherstack.com/current?access_key=449b8cf20027e2f7ddf7c69940787eda&query="+address.lon+","+address.lat;
 
   request({ url: url, json: true }, (error, response) => {
-    if (error) callback({ message: "Unable to connect-2" }, undefined);
+    if (error) callback({ message: "Unable to connect" }, undefined);
     else if (response.body.error)
     {
       console.log(response.body.error)
