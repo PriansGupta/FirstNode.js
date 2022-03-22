@@ -8,7 +8,7 @@ const weather = (address, callback) => {
     else if (response.body.error)
     {
       console.log(response.body.error)
-      callback({ message: "Unable to connect-3" }, undefined);
+      callback({ message: "Unable to connect" }, undefined);
     }
     else {
       const Temperature = response.body.current.temperature;
