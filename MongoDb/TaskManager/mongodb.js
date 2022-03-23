@@ -19,6 +19,11 @@ MongoClient.connect(
     db.collection('users').insertOne({
         name:"Priyansh",
         age:20
+    },(error,result)=>{
+        if(error)
+        return console.log("Unable to insert the document")
+
+        console.log(result.ops)
     })
   }
 );
