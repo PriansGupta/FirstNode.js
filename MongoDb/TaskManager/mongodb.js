@@ -18,40 +18,40 @@ MongoClient.connect(
 
     const db = client.db(database);
 
-    db.collection("users").insertMany(
-      [
-        {
-          name: "Priyansh",
-          age: 20,
-        },
-        {
-          name: "Ruhi",
-          age: 27,
-        },
-      ],
-      (error, result) => {
-        if (error) return console.log("Unable to insert the document");
+    // db.collection("users").insertMany(
+    //   [
+    //     {
+    //       name: "Priyansh",
+    //       age: 20,
+    //     },
+    //     {
+    //       name: "Ruhi",
+    //       age: 27,
+    //     },
+    //   ],
+    //   (error, result) => {
+    //     if (error) return console.log("Unable to insert the document");
 
-        console.log(result.ops);
-      }
-    );
+    //     console.log(result.ops);
+    //   }
+    // );
 
-    db.collection("Tasks").insertMany(
-      [
-        {
-          ToDo: "Practical",
-          status: false,
-        },
-        {
-          ToDo: "End Sem",
-          status: true,
-        },
-      ],
-      (error, result) => {
-        if (error) return console.log("Unable to insert the document");
+    // db.collection("Tasks").insertMany(
+    //   [
+    //     {
+    //       ToDo: "Practical",
+    //       status: false,
+    //     },
+    //     {
+    //       ToDo: "End Sem",
+    //       status: true,
+    //     },
+    //   ],
+    //   (error, result) => {
+    //     if (error) return console.log("Unable to insert the document");
 
-        console.log(result.ops);
-      }
-    );
+    //     console.log(result.ops);
+    //   }
+    // );
   }
 );
