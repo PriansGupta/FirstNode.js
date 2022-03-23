@@ -11,5 +11,7 @@ MongoClient.connect(
     if (error) {
       return console.log("Unable to Connect to DataBase");
     }
+
+    console.log("Connected");
   }
 );
