@@ -1,5 +1,5 @@
 const mongobd = require("mongodb");
-const MongoClient = mongobd.mongoClient;
+const MongoClient = mongobd.MongoClient;
 
 const connectionURL = "mongodb://127.0.0.1:27017";
 const database = "taskManager";
