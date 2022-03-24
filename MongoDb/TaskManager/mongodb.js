@@ -10,7 +10,7 @@ const connectionURL = "mongodb://127.0.0.1:27017";
 const database = "taskManager";
 
 const id = new ObjectID();
-console.log("ID:" + id);
+console.log("OBJECT ID:" + id);
 console.log(id.getTimestamp());
 
 MongoClient.connect(
