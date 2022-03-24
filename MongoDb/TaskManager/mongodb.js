@@ -18,7 +18,7 @@ MongoClient.connect(
   { useNewUrlParser: true },
   (error, client) => {
     if (error) {
-      return console.log("Unable to Connect to DataBase");
+      return console.log("UNABLE TO CONNECT TO THE DATABASE");
     }
 
     console.log("Connected");
