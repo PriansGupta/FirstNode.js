@@ -1,7 +1,6 @@
 //CRUD
 
 // const mongobd = require("mongodb");
-// 
 
 
 const { MongoClient, ObjectID } = require("mongodb");
