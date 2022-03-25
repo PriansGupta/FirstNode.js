@@ -1,7 +1,7 @@
 //CRUD
 
 // const mongobd = require("mongodb");
-// const MongoClient = mongobd.MongoClient;
+// const MongoClient = 
 
 
 const { MongoClient, ObjectID } = require("mongodb");
