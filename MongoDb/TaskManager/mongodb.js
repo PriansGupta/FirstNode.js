@@ -21,5 +21,9 @@ MongoClient.connect(
 
     const db = client.db(database);
 
+    db.collecton('users').updateOne({
+        _id: new ObjectID("623b092890f25d05807dc737")
+    })
+
   }
 );
