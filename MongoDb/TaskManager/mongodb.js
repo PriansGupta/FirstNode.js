@@ -41,15 +41,22 @@ MongoClient.connect(
         console.log(error);
       });
 
-    db.collection("Tasks").updateMany(
-      {
-        status:false,
-      },
-      {
-        $set: {
+    db.collection("Tasks")
+      .updateMany(
+        {
           status: true,
         },
-      }
-    );
+        {
+          $set: {
+            status: false,
+          },
+        }
+      )
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 );
