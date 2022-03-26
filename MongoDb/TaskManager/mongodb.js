@@ -23,6 +23,10 @@ MongoClient.connect(
 
     db.collection("users").updateOne({
       _id: new ObjectID("623b092890f25d05807dc737"),
+    },{
+        $set:{
+              name:"Alexis"
+        }
     });
   }
 );
