@@ -22,8 +22,7 @@ MongoClient.connect(
     const db = client.db(database);
 
     db.collection("users").findOne({ age: 20 }, (error, user) => {
-      if (error) return console.log("UNABLE TO FETCH");
-
+      if (error) return console.log
     });
   }
 );
