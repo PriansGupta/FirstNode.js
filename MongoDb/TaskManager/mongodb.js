@@ -28,6 +28,7 @@ MongoClient.connect(
       {
         $set: {
           name: "Alexis",
+          age: 23,
         },
       }
     );
@@ -39,5 +40,16 @@ MongoClient.connect(
       .catch((error) => {
         console.log(error);
       });
+
+    db.collection("Tasks").updateMany(
+      {
+        status:false,
+      },
+      {
+        $set: {
+          status: true,
+        },
+      }
+    );
   }
 );
