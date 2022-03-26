@@ -21,12 +21,19 @@ MongoClient.connect(
 
     const db = client.db(database);
 
-    db.collection("users").updateOne({
+   const updatePromise= db.collection("users").updateOne({
       _id: new ObjectID("623b092890f25d05807dc737"),
     },{
         $set:{
               name:"Alexis"
         }
     });
+
+    updatePromise.then((result)=>{
+
+    }).catch((error)=>{
+        
+    })
+
   }
 );
