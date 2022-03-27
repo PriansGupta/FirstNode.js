@@ -44,16 +44,16 @@ MongoClient.connect(
     db.collection("Tasks")
       .updateMany(
         {
-          status: true,
+          status: false,
         },
         {
           $set: {
-            status: false,
+            status: true,
           },
         }
       )
       .then((result) => {
-        console.log(result);
+        console.log("Result: "+result);
       })
       .catch((error) => {
         console.log(error);
