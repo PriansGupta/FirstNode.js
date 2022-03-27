@@ -35,7 +35,8 @@ MongoClient.connect(
 
     updatePromise
       .then((result) => {
-        console.log(result);
+        console.log("Result: "+result);
+        
       })
       .catch((error) => {
         console.log(error);
