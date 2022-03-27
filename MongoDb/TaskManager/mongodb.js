@@ -39,7 +39,6 @@ MongoClient.connect(
       })
       .catch((error) => {
         console.log("Error: "+error);
-
       });
 
     db.collection("Tasks")
