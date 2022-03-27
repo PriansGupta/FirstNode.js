@@ -56,7 +56,7 @@ MongoClient.connect(
         console.log("Result: "+result);
       })
       .catch((error) => {
-        console.log(error);
+        console.log("Error: "+error);
       });
   }
 );
