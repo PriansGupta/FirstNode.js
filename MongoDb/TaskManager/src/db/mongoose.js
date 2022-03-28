@@ -14,7 +14,7 @@ const User = mongoose.model("User", {
   },
 });
 
-const me=new User({
-    name:"Suneeta",
-    age:47
-})
+const me = new User({
+  name: "Suneeta",
+  age: 47,
+});
