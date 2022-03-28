@@ -14,15 +14,15 @@ const User = mongoose.model("User", {
   },
 });
 
-const me = new User({
-  name: "Suneeta",
-  age: 47,
-});
+// const me = new User({
+//   name: "Suneeta",
+//   age: 47,
+// });
 
-me.save()
-  .then(() => {
-    console.log(me);
-  })
-  .catch((error) => {
-    console.loh(error);
-  });
+// me.save()
+//   .then(() => {
+//     console.log(me);
+//   })
+//   .catch((error) => {
+//     console.loh(error);
+//   });
