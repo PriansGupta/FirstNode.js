@@ -14,25 +14,27 @@ const User = mongoose.model("User", {
   },
 });
 
-const Task=mongoose.model("Tasks",{
-    Description:{
-        type:String
-    },
-    Completed:{
-        type:Boolean
-    }
-})
+const Task = mongoose.model("Tasks", {
+  Description: {
+    type: String,
+  },
+  Completed: {
+    type: Boolean,
+  },
+});
 
-const NewTask=new Task({
-    Description:"Studying SSD",
-    Completed:false
-})
+const NewTask = new Task({
+  Description: "Studying SSD",
+  Completed: false,
+});
 
-NewTask.save().then(()=>{
-    console.log(NewTask)
-}).catch((error)=>{
-    console.log(error)
-})
+NewTask.save()
+  .then(() => {
+    console.log(NewTask);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 // const me = new User({
 //   name: "Suneeta",
