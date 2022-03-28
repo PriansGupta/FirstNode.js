@@ -22,6 +22,18 @@ const Task=mongoose.model("Tasks",{
         type:Boolean
     }
 })
+
+const NewTask=new Task({
+    Description:"Studying SSD",
+    Completed:false
+})
+
+NewTask.save().then(()=>{
+    console.log(NewTask)
+}).catch((error)=>{
+    console.log(error)
+})
+
 // const me = new User({
 //   name: "Suneeta",
 //   age: 47,
