@@ -18,3 +18,11 @@ const me = new User({
   name: "Suneeta",
   age: 47,
 });
+
+me.save()
+  .then(() => {
+    console.log(me);
+  })
+  .catch((error) => {
+    console.loh(error);
+  });
