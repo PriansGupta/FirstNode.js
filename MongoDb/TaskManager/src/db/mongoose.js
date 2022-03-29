@@ -28,10 +28,10 @@ const NewTask1 = new Task({
   Completed: false,
 });
 
-const NewTask2 = new Task({
-  Description: "Studying DE",
-  Completed: false,
-});
+// const NewTask2 = new Task({
+//   Description: "Studying DE",
+//   Completed: false,
+// });
 
 // NewTask2.save()
 //   .then(() => {
