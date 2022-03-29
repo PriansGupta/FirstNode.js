@@ -23,14 +23,14 @@ const Task = mongoose.model("Tasks", {
   },
 });
 
-const NewTask = new Task({
+const NewTask1 = new Task({
   Description: "Studying SSD",
   Completed: false,
 });
 
-NewTask.save()
+NewTask1.save()
   .then(() => {
-    console.log(NewTask);
+    console.log(NewTask1);
   })
   .catch((error) => {
     console.log(error);
