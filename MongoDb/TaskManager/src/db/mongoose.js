@@ -33,13 +33,13 @@ const NewTask2 = new Task({
   Completed: false,
 });
 
-NewTask2.save()
-  .then(() => {
-    console.log(NewTask2);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+// NewTask2.save()
+//   .then(() => {
+//     console.log(NewTask2);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
 
 // NewTask1.save()
 //   .then(() => {
