@@ -41,13 +41,13 @@ NewTask2.save()
     console.log(error);
   });
 
-NewTask1.save()
-  .then(() => {
-    console.log(NewTask1);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+// NewTask1.save()
+//   .then(() => {
+//     console.log(NewTask1);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
 
 // const me = new User({
 //   name: "Suneeta",
