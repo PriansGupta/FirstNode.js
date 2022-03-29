@@ -49,10 +49,10 @@ NewTask1.save()
     console.log(error);
   });
 
-const me = new User({
-  name: "Suneeta",
-  age: 47,
-});
+// const me = new User({
+//   name: "Suneeta",
+//   age: 47,
+// });
 
 // me.save()
 //   .then(() => {
