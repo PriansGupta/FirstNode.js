@@ -15,7 +15,9 @@ const User = mongoose.model("User", {
       type:String,
       required:true,
       validate(value){
-          
+          if(!validator.isEmail(value)){
+              throw new Error("Not a Valid Email")
+          }
       }
   },
   age: {
