@@ -39,10 +39,10 @@ const Task = mongoose.model("Tasks", {
   },
 });
 
-const NewTask1 = new Task({
-  Description: "Studying SSD",
-  Completed: false,
-});
+// const NewTask1 = new Task({
+//   Description: "Studying SSD",
+//   Completed: false,
+// });
 
 // const NewTask2 = new Task({
 //   Description: "Studying DE",
