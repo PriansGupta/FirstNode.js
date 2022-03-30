@@ -60,10 +60,10 @@ const me = new User({
   age: -47,
 });
 
-// me.save()
-//   .then(() => {
-//     console.log(me);
-//   })
-//   .catch((error) => {
-//     console.loh(error);
-//   });
+me.save()
+  .then(() => {
+    console.log(me);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
