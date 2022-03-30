@@ -57,7 +57,7 @@ NewTask1.save()
 
 const me = new User({
   name: "Suneeta",
-  age: 47,
+  age: -47,
 });
 
 // me.save()
