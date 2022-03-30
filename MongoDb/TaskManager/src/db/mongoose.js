@@ -57,17 +57,18 @@ const Task = mongoose.model("Tasks", {
 //     console.log(error);
 //   });
 
-NewTask1.save()
-  .then(() => {
-    console.log(NewTask1);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+// NewTask1.save()
+//   .then(() => {
+//     console.log(NewTask1);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
 
 const me = new User({
   name: "Suneeta",
-  age: -47,
+  age: 23,
+  email:"Suneeta@gmail.com"
 });
 
 me.save()
