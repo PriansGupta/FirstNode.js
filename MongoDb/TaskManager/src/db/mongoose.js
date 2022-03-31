@@ -68,7 +68,7 @@ const Task = mongoose.model("Tasks", {
 const me = new User({
   name: "Priyanssh",
   age: 23,
-  email:"Suneeta@gmail.com"
+  email:"p"
 });
 
 me.save()
