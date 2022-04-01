@@ -1,13 +1,12 @@
-const express=require("express")
+const express = require("express");
 
-const app=express();
-const port=process.env.PORT || 3000;
+const app = express();
+const port = process.env.PORT || 3000;
 
-app.post('/users',(req,res)=>{
+app.post("/users", (req, res) => {
+  res.send("Testing!");
+});
 
-    res.send("Testing!")
-})
-
-app.listen(port,()=>{
-console.log("Server is Up!")
-})
+app.listen(port, () => {
+  console.log("Server is Up!");
+});
