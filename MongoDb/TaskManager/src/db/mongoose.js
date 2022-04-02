@@ -6,28 +6,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/task-manager-api", {
   useCreateIndex: true,
 });
 
-const User = mongoose.model("User", {
-  name: {
-    type: String,
-    required:true
-  },
-  email:{
-      type:String,
-      required:true,
-      validate(value){
-          if(!validator.isEmail(value)){
-              throw new Error("Not a Valid Email")
-          }
-      }
-  },
-  age: {
-    type: Number,
-    validate(value){
-    if(value<0)
-    throw new Error("Age must be Positive")
-    }
-  },
-});
+
 
 const Task = mongoose.model("Tasks", {
   Description: {
