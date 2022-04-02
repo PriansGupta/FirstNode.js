@@ -35,10 +35,10 @@ MongoClient.connect(
 
     updatePromise
       .then((result) => {
-        console.log("Result: "+result);
+        console.log("Result: " + result);
       })
       .catch((error) => {
-        console.log("Error: "+error);
+        console.log("Error: " + error);
       });
 
     db.collection("Tasks")
@@ -53,10 +53,10 @@ MongoClient.connect(
         }
       )
       .then((result) => {
-        console.log("Result: "+result);
+        console.log("Result: " + result);
       })
       .catch((error) => {
-        console.log("Error: "+error);
+        console.log("Error: " + error);
       });
   }
 );
