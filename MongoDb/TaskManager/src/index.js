@@ -16,7 +16,7 @@ app.post("/users", (req, res) => {
       res.send(user);
     })
     .catch((e) => {
-        res.status(400)
+        res.status(400).send(e)
     });
 });
 
