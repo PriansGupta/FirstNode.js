@@ -16,18 +16,3 @@ const Task = mongoose.model("Tasks", {
     type: Boolean,
   },
 });
-
-
-const me = new User({
-  name: "Priyanssh",
-  age: 20,
-  email:"priyanshg615@gmal.com"
-});
-
-me.save()
-  .then(() => {
-    console.log(me);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
