@@ -18,31 +18,6 @@ const Task = mongoose.model("Tasks", {
   },
 });
 
-// const NewTask1 = new Task({
-//   Description: "Studying SSD",
-//   Completed: false,
-// });
-
-// const NewTask2 = new Task({
-//   Description: "Studying DE",
-//   Completed: false,
-// });
-
-// NewTask2.save()
-//   .then(() => {
-//     console.log(NewTask2);
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
-
-// NewTask1.save()
-//   .then(() => {
-//     console.log(NewTask1);
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
 
 const me = new User({
   name: "Priyanssh",
