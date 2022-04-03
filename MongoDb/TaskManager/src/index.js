@@ -34,6 +34,14 @@ app.post("/tasks", (req, res) => {
     });
 });
 
+app.get("/users",(res,req)=>{
+
+    User.find({}).then((users)=>{
+        res.send
+    })
+
+})
+
 app.listen(port, () => {
   console.log("Server is Up!");
 });
