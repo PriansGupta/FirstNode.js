@@ -23,6 +23,8 @@ app.post("/users", (req, res) => {
 });
 
 app.post("/tasks",(req,res)=>{
+
+    const task=new Task(req.body);
     
 })
 
