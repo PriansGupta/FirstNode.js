@@ -34,7 +34,7 @@ app.post("/tasks", (req, res) => {
     });
 });
 
-app.get("/users", (res, req) => {
+app.get("/users", (req,res) => {
 
   User.find({})
     .then((users) => {
