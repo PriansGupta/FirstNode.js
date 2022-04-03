@@ -34,6 +34,16 @@ app.post("/tasks", (req, res) => {
     });
 });
 
+app.get("/users/:id",(req,res)=>{
+    const _id=(req.params.id)
+
+    User.find({_id:_id}).then((user)=>{
+        res.status(200).send(user)
+    }).catch((e)=>{
+        res.status(404).send(e)
+    })
+})
+
 app.get("/users", (req,res) => {
 
   User.find({})
@@ -41,7 +51,7 @@ app.get("/users", (req,res) => {
       res.status(200).send(users);
     })
     .catch((e) => {
-      res.status(400).send(e);
+      res.status(500).send();
     });
 });
 
