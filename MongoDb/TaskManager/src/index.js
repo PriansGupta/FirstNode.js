@@ -25,7 +25,13 @@ app.post("/users", (req, res) => {
 app.post("/tasks",(req,res)=>{
 
     const task=new Task(req.body);
-    
+
+    task.save().then(()=>{
+        res.send(task)
+    }).catch((e)=>{
+        res.status(400).send(e)
+    })
+
 })
 
 
