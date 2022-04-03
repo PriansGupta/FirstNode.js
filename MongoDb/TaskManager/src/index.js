@@ -59,5 +59,5 @@ app.get("/users", (req,res) => {
 });
 
 app.listen(port, () => {
-  console.log("Server is Up!");
+  console.log("Server is Running!");
 });
