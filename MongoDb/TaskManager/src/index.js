@@ -38,10 +38,10 @@ app.get("/users", (req,res) => {
 
   User.find({})
     .then((users) => {
-      res.send(users);
+      res.status(200).send(users);
     })
     .catch((e) => {
-      // res.status(400).send(e);
+      res.status(400).send(e);
     });
 });
 
