@@ -15,4 +15,4 @@ const Task = mongoose.model("Tasks", {
   },
 });
 
-module.exports=Task
+module.exports = Task;
