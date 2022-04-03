@@ -37,7 +37,9 @@ app.post("/tasks", (req, res) => {
 app.get("/users",(res,req)=>{
 
     User.find({}).then((users)=>{
-        res.send
+        res.status(200).send(users)
+    }).catch((e)=>{
+        res.status(400).send(e);
     })
 
 })
