@@ -37,8 +37,11 @@ app.post("/tasks", (req, res) => {
 app.get("/users/:id",(req,res)=>{
     const _id=(req.params.id)
 
-    User.find({_id:_id}).then((user)=>{
-        res.status(200).send(user)
+    User.findById(_id).then((user)=>{
+        if(!user){
+            return res.status(404).send()
+        }
+        res.status(200).send("User Found: "+user)
     }).catch((e)=>{
         res.status(404).send(e)
     })
