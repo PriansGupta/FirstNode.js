@@ -1,5 +1,5 @@
-const express = require("express");
 require("../src/db/mongoose");
+const express = require("express");
 const User = require("../src/models/user");
 const Task = require("../src/models/tasks");
 
@@ -35,9 +35,10 @@ app.post("/tasks", (req, res) => {
 });
 
 app.get("/users", (res, req) => {
+
   User.find({})
     .then((users) => {
-      res.status(200).send(users);
+      res.send(users);
     })
     .catch((e) => {
       // res.status(400).send(e);
