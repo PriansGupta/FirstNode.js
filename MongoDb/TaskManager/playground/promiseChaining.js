@@ -17,10 +17,10 @@ User.findByIdAndUpdate("62449d528a95f03e701d7c02", { age: 47 })
 
 
 
-Task.findByIdAndDelete("62449d528a95f03e701d7c02", { age: 47 })
+Task.findByIdAndDelete("62449aab9bf8be08bc318032",)
   .then((user) => {
     console.log(user);
-    return User.countDocuments({ age: 47 });
+    return User.countDocuments();
   })
   .then((result) => {
     console.log(result);
