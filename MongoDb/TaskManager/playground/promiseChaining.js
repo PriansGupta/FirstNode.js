@@ -6,4 +6,6 @@ User.findById("62449aab9bf8be08bc318032",{age:1}).then((user)=>{
     return User.countDocuments({age:1})
 }).then((result)=>{
     console.log(result)
+}).catch((e)=>{
+    console.log(e)
 })
