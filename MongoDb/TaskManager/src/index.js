@@ -18,10 +18,6 @@ app.post("/users", async (req, res) => {
     console.log(e);
   }
 
-
-
-  //     })
-  //     .catch((e) => {
   //       res.status(400).send(e);
   //     });
 });
