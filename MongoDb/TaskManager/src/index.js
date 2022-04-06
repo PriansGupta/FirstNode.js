@@ -71,6 +71,11 @@ app.get("/tasks/:id", (req,res) => {
     })
 });
 
+const Delete= async (id)=>{
+const task=await Task.findByIdAndDelete(id);
+const count =
+}
+
 app.listen(port, () => {
   console.log("Hurray!!...Server is Running");
 });
