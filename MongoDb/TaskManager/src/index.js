@@ -78,7 +78,8 @@ const count =await Task.countDocuments({Completed:false})
 return count;
 }
 
-console.log(Delete("624b024a911f3840d4729298"))
+Delete("624b024a911f3840d4729298").then((count)=>{
+})
 
 app.listen(port, () => {
   console.log("Hurray!!...Server is Running");
