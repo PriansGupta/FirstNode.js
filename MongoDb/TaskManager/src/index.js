@@ -12,7 +12,8 @@ app.post("/users", async (req, res) => {
   const user = new User(req.body);
 
    try{
-
+    await user.save();
+    
    }catch(e){
        console.log(e);
    }
