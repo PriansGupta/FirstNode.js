@@ -73,7 +73,9 @@ app.get("/tasks/:id", (req,res) => {
 
 const Delete= async (id)=>{
 const task=await Task.findByIdAndDelete(id);
-const count =
+const count =await Task.countDocuments({Completed:false})
+
+return count;
 }
 
 app.listen(port, () => {
