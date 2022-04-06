@@ -18,7 +18,6 @@ app.post("/users", async (req, res) => {
     console.log(e);
   }
 
-  //   user
   //     .save()
   //     .then(() => {
   //       res.status(201).send(user);
