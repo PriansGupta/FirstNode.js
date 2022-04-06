@@ -11,6 +11,12 @@ app.use(express.json());
 app.post("/users", async (req, res) => {
   const user = new User(req.body);
 
+   try{
+
+   }catch(e){
+       console.log(e);
+   }
+
 //   user
 //     .save()
 //     .then(() => {
