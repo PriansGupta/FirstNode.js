@@ -19,7 +19,7 @@ app.post("/users", async (req, res) => {
   }
 });
 
-app.post("/tasks", (req, res) => {
+app.post("/tasks",async (req, res) => {
   const task = new Task(req.body);
 
   task
