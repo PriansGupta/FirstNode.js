@@ -79,6 +79,9 @@ return count;
 }
 
 Delete("624b024a911f3840d4729298").then((count)=>{
+    console.log(count)
+}).catch((e)=>{
+    
 })
 
 app.listen(port, () => {
