@@ -17,8 +17,6 @@ app.post("/users", async (req, res) => {
   } catch (e) {
     console.log(e);
   }
-
- 
 });
 
 app.post("/tasks", (req, res) => {
