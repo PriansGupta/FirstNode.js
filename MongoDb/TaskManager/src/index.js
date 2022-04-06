@@ -8,17 +8,17 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
-app.post("/users", (req, res) => {
+app.post("/users", async (req, res) => {
   const user = new User(req.body);
 
-  user
-    .save()
-    .then(() => {
-      res.status(201).send(user);
-    })
-    .catch((e) => {
-      res.status(400).send(e);
-    });
+//   user
+//     .save()
+//     .then(() => {
+//       res.status(201).send(user);
+//     })
+//     .catch((e) => {
+//       res.status(400).send(e);
+//     });
 });
 
 app.post("/tasks", (req, res) => {
@@ -78,10 +78,10 @@ const count =await Task.countDocuments({Completed:false})
 return count;
 }
 
-Delete("624b024a911f3840d4729298").then((count)=>{
+Delete("624d9db74894a20640df0c87").then((count)=>{
     console.log(count)
 }).catch((e)=>{
-    
+  console.log(e);
 })
 
 app.listen(port, () => {
