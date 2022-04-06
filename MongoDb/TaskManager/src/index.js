@@ -30,19 +30,31 @@ app.post("/tasks", async (req, res) => {
   }
 });
 
-app.get("/users/:id", (req, res) => {
+app.get("/users/:id", async (req, res) => {
   const _id = req.params.id;
 
-  User.findById(_id)
-    .then((user) => {
+  try{
+      const user=await User.findById(_id)
       if (!user) {
-        return res.status(404).send();
-      }
+                return res.status(404).send();
+              }
       res.status(200).send("User Found: " + user);
-    })
-    .catch((e) => {
+
+    }catch(e){
       res.status(404).send(e);
-    });
+
+    }
+
+//   User.findById(_id)
+//     .then((user) => {
+//       if (!user) {
+//         return res.status(404).send();
+//       }
+//       res.status(200).send("User Found: " + user);
+//     })
+//     .catch((e) => {
+//       res.status(404).send(e);
+//     });
 });
 
 app.get("/users", (req, res) => {
