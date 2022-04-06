@@ -22,14 +22,23 @@ app.post("/users", async (req, res) => {
 app.post("/tasks",async (req, res) => {
   const task = new Task(req.body);
 
-  task
-    .save()
-    .then(() => {
-      res.status(201).send(task);
-    })
-    .catch((e) => {
-      res.status(400).send(e);
-    });
+  await task.save();
+
+  try{
+
+  }
+  catch(e){
+      
+  }
+
+//   task
+//     .save()
+//     .then(() => {
+//       res.status(201).send(task);
+//     })
+//     .catch((e) => {
+//       res.status(400).send(e);
+//     });
 });
 
 app.get("/users/:id", (req, res) => {
