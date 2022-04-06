@@ -18,8 +18,7 @@ app.post("/users", async (req, res) => {
     console.log(e);
   }
 
-  //       res.status(400).send(e);
-  //     });
+ 
 });
 
 app.post("/tasks", (req, res) => {
