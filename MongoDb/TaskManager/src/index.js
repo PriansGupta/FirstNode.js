@@ -15,22 +15,18 @@ app.post("/users", async (req, res) => {
     await user.save();
     res.status(201).send(user);
   } catch (e) {
-    res.status(404).send(e)
+    res.status(404).send(e);
   }
 });
 
-app.post("/tasks",async (req, res) => {
+app.post("/tasks", async (req, res) => {
   const task = new Task(req.body);
 
-  
-  try{
-      await task.save();
-      res.status(201).send(task);
-
-  }
-  catch(e){
-      res.status(400).send(e);
-      
+  try {
+    await task.save();
+    res.status(201).send(task);
+  } catch (e) {
+    res.status(400).send(e);
   }
 });
 
