@@ -11,21 +11,21 @@ app.use(express.json());
 app.post("/users", async (req, res) => {
   const user = new User(req.body);
 
-   try{
+  try {
     await user.save();
     res.status(201).send(user);
-   }catch(e){
-       console.log(e);
-   }
+  } catch (e) {
+    console.log(e);
+  }
 
-//   user
-//     .save()
-//     .then(() => {
-//       res.status(201).send(user);
-//     })
-//     .catch((e) => {
-//       res.status(400).send(e);
-//     });
+  //   user
+  //     .save()
+  //     .then(() => {
+  //       res.status(201).send(user);
+  //     })
+  //     .catch((e) => {
+  //       res.status(400).send(e);
+  //     });
 });
 
 app.post("/tasks", (req, res) => {
@@ -41,21 +41,22 @@ app.post("/tasks", (req, res) => {
     });
 });
 
-app.get("/users/:id",(req,res)=>{
-    const _id=(req.params.id)
+app.get("/users/:id", (req, res) => {
+  const _id = req.params.id;
 
-    User.findById(_id).then((user)=>{
-        if(!user){
-            return res.status(404).send()
-        }
-        res.status(200).send("User Found: "+user)
-    }).catch((e)=>{
-        res.status(404).send(e)
+  User.findById(_id)
+    .then((user) => {
+      if (!user) {
+        return res.status(404).send();
+      }
+      res.status(200).send("User Found: " + user);
     })
-})
+    .catch((e) => {
+      res.status(404).send(e);
+    });
+});
 
-app.get("/users", (req,res) => {
-
+app.get("/users", (req, res) => {
   User.find({})
     .then((users) => {
       res.status(200).send(users);
@@ -64,32 +65,35 @@ app.get("/users", (req,res) => {
       res.status(500).send();
     });
 });
-app.get("/tasks/:id", (req,res) => {
+app.get("/tasks/:id", (req, res) => {
+  const _id = req.params.id;
 
-    const _id=(req.params.id)
-
-    Task.findById(_id).then((task)=>{
-        if(!task){
-            return res.status(404).send()
-        }
-        res.status(200).send("Task Found: "+task)
-    }).catch((e)=>{
-        res.status(404).send(e)
+  Task.findById(_id)
+    .then((task) => {
+      if (!task) {
+        return res.status(404).send();
+      }
+      res.status(200).send("Task Found: " + task);
     })
+    .catch((e) => {
+      res.status(404).send(e);
+    });
 });
 
-const Delete= async (id)=>{
-const task=await Task.findByIdAndDelete(id);
-const count =await Task.countDocuments({Completed:false})
+const Delete = async (id) => {
+  const task = await Task.findByIdAndDelete(id);
+  const count = await Task.countDocuments({ Completed: false });
 
-return count;
-}
+  return count;
+};
 
-Delete("624d9db74894a20640df0c87").then((count)=>{
-    console.log(count)
-}).catch((e)=>{
-  console.log(e);
-})
+Delete("624d9db74894a20640df0c87")
+  .then((count) => {
+    console.log(count);
+  })
+  .catch((e) => {
+    console.log(e);
+  });
 
 app.listen(port, () => {
   console.log("Hurray!!...Server is Running");
