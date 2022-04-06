@@ -14,7 +14,6 @@ app.post("/users", async (req, res) => {
    try{
     await user.save();
     res.status(201).send(user);
-
    }catch(e){
        console.log(e);
    }
