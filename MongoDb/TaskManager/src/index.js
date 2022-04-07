@@ -51,8 +51,7 @@ app.get("/users/:id", async (req, res) => {
 //         return res.status(404).send();
 //       }
 //       res.status(200).send("User Found: " + user);
-//     })
-//     .catch((e
+//
 });
 
 app.get("/users", (req, res) => {
