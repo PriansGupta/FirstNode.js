@@ -45,7 +45,6 @@ app.get("/users/:id", async (req, res) => {
 
     }
 
-//   User.
 });
 
 app.get("/users", (req, res) => {
