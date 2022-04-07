@@ -54,7 +54,6 @@ app.get("/users/:id", async (req, res) => {
 //     })
 //     .catch((e) => {
 //       res.status(404).send(e);
-//     });
 });
 
 app.get("/users", (req, res) => {
