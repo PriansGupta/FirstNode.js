@@ -48,7 +48,7 @@ app.get("/users/:id", async (req, res) => {
 //   User.findById(_id)
 //     .then((user) => {
 //       if (!user) {
-//         return res.status(404).send();
+//         return res.
 });
 
 app.get("/users", (req, res) => {
