@@ -46,7 +46,7 @@ app.get("/users/:id", async (req, res) => {
     }
 
 //   User.findById(_id)
-//     .then((user) => {
+//     
 
 });
 
