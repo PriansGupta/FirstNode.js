@@ -73,15 +73,13 @@ app.get("/tasks/:id", async (req, res) => {
 });
 
 app.patch("/users/:id", async (req, res) => {
-
   const updates = Object.keys(req.body);
   const AllowedUpdates = ["name", "email", "age"];
   const isValid = updates.every((update) => {
     return AllowedUpdates.includes(update);
   });
 
-  if(!isValid)
-  return res.status(400).send({Error:"Invalid Updates"})
+  if (!isValid) return res.status(400).send({ Error: "Invalid Updates" });
 
   try {
     const user = await User.findById(req.params.id, req.body, {
@@ -98,19 +96,17 @@ app.patch("/users/:id", async (req, res) => {
   }
 });
 
-app.delete("/users/:id",async (req,res)=>{
-    try{
-        const user=await User.findByIdAndDelete(req.params.id)
+app.delete("/users/:id", async (req, res) => {
+  try {
+    const user = await User.findByIdAndDelete(req.params.id);
 
-        if(!user)
-        return res.status(400).send({Error:"Nothing to delete"})
+    if (!user) return res.status(400).send({ Error: "Nothing to delete" });
 
-        res.status(200).send(user)
-    }
-    catch(e){
-        res.status(400).send(e)
-    }
-})
+    res.status(200).send(user);
+  } catch (e) {
+    res.status(400).send(e);
+  }
+});
 
 app.listen(port, () => {
   console.log("Hurray!!...Server is Running");
