@@ -74,9 +74,7 @@ app.get("/tasks/:id", async (req, res) => {
 //         return res.status(404).send();
 //       }
 //       res.status(200).send("Task Found: " + task);
-//     })
-//     .catch((e) => {
-//       res.status(404).send(e);
+
 });
 
 const Delete = async (id) => {
