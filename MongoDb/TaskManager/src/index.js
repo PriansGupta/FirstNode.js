@@ -82,7 +82,6 @@ app.patch("/users/:id",async (req,res)=>{
     }catch(e){
         res.status(400).send(e)
     }
-
 })
 
 const Delete = async (id) => {
