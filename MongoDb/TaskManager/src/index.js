@@ -53,7 +53,7 @@ app.get("/users", (req, res) => {
       res.status(500).send();
     });
 });
-app.get("/tasks/:id", (req, res) => {
+app.get("/tasks/:id", async (req, res) => {
   const _id = req.params.id;
 
   Task.findById(_id)
