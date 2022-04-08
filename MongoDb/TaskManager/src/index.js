@@ -73,6 +73,12 @@ app.get("/tasks/:id", async (req, res) => {
 });
 
 app.patch("/users/:id", async (req, res) => {
+
+    const updates=Object.keys(req.body)
+    const AllowedUpdates=["name","email","age"]
+    const isValid=updates.every((update)=>{
+     return AllowedUpdates.includes(update)   
+    })
   try {
     const user = await User.findById(req.params.id, req.body, {
       new: true,
