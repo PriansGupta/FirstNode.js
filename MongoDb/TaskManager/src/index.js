@@ -65,6 +65,7 @@ app.get("/tasks/:id", async (req, res) => {
       res.status(200).send("Task Found: " + task);
   }
   catch(e){
+    res.status(404).send(e);
 
   }
   Task.findById(_id)
