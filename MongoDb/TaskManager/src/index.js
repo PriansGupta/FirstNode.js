@@ -46,19 +46,15 @@ app.get("/users/:id", async (req, res) => {
 });
 
 app.get("/users", async (req, res) => {
-  try{
-    const users=await User.find({})
+  try {
+    const users = await User.find({});
 
-    if(!users)
-    return res.status(400).send();
+    if (!users) return res.status(400).send();
 
     res.status(200).send(users);
-
-  }catch(e){
+  } catch (e) {
     res.status(500).send(e);
-
   }
-  
 });
 
 app.get("/tasks/:id", async (req, res) => {
@@ -76,20 +72,21 @@ app.get("/tasks/:id", async (req, res) => {
   }
 });
 
+app.patch("/users/:id", async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
+    });
 
-app.patch("/users/:id",async (req,res)=>{
-
-    try{
-        const user=await User.findById(req.params.id,req.body,{new:true,runValidators:true})
-
-        if(!user){
-            return res.status(400).send(e)
-        }
-        res.send(user)
-    }catch(e){
-        res.status(400).send(e)
+    if (!user) {
+      return res.status(400).send(e);
     }
-})
+    res.send(user);
+  } catch (e) {
+    res.status(400).send(e);
+  }
+});
 
 const Delete = async (id) => {
   const task = await Task.findByIdAndDelete(id);
