@@ -68,6 +68,15 @@ app.get("/tasks/:id", async (req, res) => {
   }
 });
 
+
+app.patch("/users/:id",async (req,res)=>{
+
+    try{
+        
+    }
+
+})
+
 const Delete = async (id) => {
   const task = await Task.findByIdAndDelete(id);
   const count = await Task.countDocuments({ Completed: false });
