@@ -98,7 +98,14 @@ app.patch("/users/:id", async (req, res) => {
   }
 });
 
+app.delete("/users/:id",async (req,res)=>{
+    try{
 
+    }
+    catch(e){
+        
+    }
+})
 
 app.listen(port, () => {
   console.log("Hurray!!...Server is Running");
