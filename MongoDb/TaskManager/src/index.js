@@ -100,10 +100,15 @@ app.patch("/users/:id", async (req, res) => {
 
 app.delete("/users/:id",async (req,res)=>{
     try{
+        const user=await User.findByIdAndDelete(req.params.id)
 
+        if(!user)
+        return res.status(400).send({Error:"Nothing to delete"})
+
+        res.status(200).send(user)
     }
     catch(e){
-        
+        res.status(400).send(e)
     }
 })
 
