@@ -98,20 +98,7 @@ app.patch("/users/:id", async (req, res) => {
   }
 });
 
-const Delete = async (id) => {
-  const task = await Task.findByIdAndDelete(id);
-  const count = await Task.countDocuments({ Completed: false });
 
-  return count;
-};
-
-Delete("624d9db74894a20640df0c87")
-  .then((count) => {
-    console.log(count);
-  })
-  .catch((e) => {
-    console.log(e);
-  });
 
 app.listen(port, () => {
   console.log("Hurray!!...Server is Running");
