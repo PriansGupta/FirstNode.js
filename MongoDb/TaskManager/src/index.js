@@ -57,10 +57,10 @@ app.get("/tasks/:id", async (req, res) => {
   const _id = req.params.id;
 
   try{
-      await 
+      const task =await Task.findById(_id)
   }
   catch(e){
-      
+
   }
   Task.findById(_id)
     .then((task) => {
