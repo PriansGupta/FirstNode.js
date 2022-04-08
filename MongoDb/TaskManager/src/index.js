@@ -58,6 +58,11 @@ app.get("/tasks/:id", async (req, res) => {
 
   try{
       const task =await Task.findById(_id)
+
+      if(!task){
+        return res.status(404).send();
+      }
+      res.status(200).send("Task Found: " + task);
   }
   catch(e){
 
