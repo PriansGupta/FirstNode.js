@@ -56,23 +56,16 @@ app.get("/users", (req, res) => {
 app.get("/tasks/:id", async (req, res) => {
   const _id = req.params.id;
 
-  try{
-      const task =await Task.findById(_id)
+  try {
+    const task = await Task.findById(_id);
 
-      if(!task){
-        return res.status(404).send();
-      }
-      res.status(200).send("Task Found: " + task);
-  }
-  catch(e){
+    if (!task) {
+      return res.status(404).send();
+    }
+    res.status(200).send("Task Found: " + task);
+  } catch (e) {
     res.status(404).send(e);
-
   }
-//   Task.findById(_id)
-//     .then((task) => {
-//       if (!task) {
-
-
 });
 
 const Delete = async (id) => {
