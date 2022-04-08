@@ -2,6 +2,7 @@ require("../src/db/mongoose");
 const express = require("express");
 const User = require("../src/models/user");
 const Task = require("../src/models/tasks");
+const e = require("express");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -44,8 +45,21 @@ app.get("/users/:id", async (req, res) => {
   }
 });
 
-app.get("/users", (req, res) => {
-  User.find({})
+app.get("/users", async (req, res) => {
+  try{
+    const users=await User.find({})
+
+    if(!users)
+    return res.status(400).send();
+
+    res.status(200).send(users);
+
+  }catch(e){
+    res.status(400).send(e);
+
+  }
+  
+    User.find({})
     .then((users) => {
       res.status(200).send(users);
     })
