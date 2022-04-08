@@ -53,6 +53,7 @@ app.get("/users", (req, res) => {
       res.status(500).send();
     });
 });
+
 app.get("/tasks/:id", async (req, res) => {
   const _id = req.params.id;
 
@@ -73,6 +74,13 @@ app.patch("/users/:id",async (req,res)=>{
 
     try{
         const user=await User.findById(req.params.id,req.body,{new:true,runValidators:true})
+
+        if(!user){
+            return res.status(400).send(e)
+        }
+        res.send(user)
+    }catch(e){
+        res.status(400).send(e)
     }
 
 })
