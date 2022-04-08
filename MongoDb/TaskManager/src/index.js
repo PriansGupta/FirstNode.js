@@ -56,6 +56,12 @@ app.get("/users", (req, res) => {
 app.get("/tasks/:id", async (req, res) => {
   const _id = req.params.id;
 
+  try{
+      await 
+  }
+  catch(e){
+      
+  }
   Task.findById(_id)
     .then((task) => {
       if (!task) {
