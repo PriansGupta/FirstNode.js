@@ -55,7 +55,7 @@ app.get("/users", async (req, res) => {
     res.status(200).send(users);
 
   }catch(e){
-    res.status(400).send(e);
+    res.status(500).send(e);
 
   }
   
