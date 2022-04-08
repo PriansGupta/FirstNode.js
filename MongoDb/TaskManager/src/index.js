@@ -59,13 +59,6 @@ app.get("/users", async (req, res) => {
 
   }
   
-    User.find({})
-    .then((users) => {
-      res.status(200).send(users);
-    })
-    .catch((e) => {
-      res.status(500).send();
-    });
 });
 
 app.get("/tasks/:id", async (req, res) => {
