@@ -81,7 +81,7 @@ app.patch("/users/:id", async (req, res) => {
   });
 
   if(!isValid)
-  res.status(400).send({Error:"Invalid Updates"})
+  return res.status(400).send({Error:"Invalid Updates"})
 
   try {
     const user = await User.findById(req.params.id, req.body, {
