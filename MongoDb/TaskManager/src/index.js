@@ -72,7 +72,7 @@ app.get("/tasks/:id", async (req, res) => {
 app.patch("/users/:id",async (req,res)=>{
 
     try{
-        
+        const user=await User.findById(req.params.id,res.body)
     }
 
 })
