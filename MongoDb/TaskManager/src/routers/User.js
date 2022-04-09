@@ -27,4 +27,17 @@ app.post("/users", async (req, res) => {
       res.status(404).send(e);
     }
   });
+
+  
+app.get("/users", async (req, res) => {
+    try {
+      const users = await User.find({});
+  
+      if (!users) return res.status(400).send();
+  
+      res.status(200).send(users);
+    } catch (e) {
+      res.status(500).send(e);
+    }
+  });
   
