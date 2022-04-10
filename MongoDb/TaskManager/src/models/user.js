@@ -33,7 +33,11 @@ const UserSchema=new mongoose.Schema( {
 
   UserSchema.pre('save',async function(next){
     const user=this;
-    console.log("Before Saving")
+
+    if(user.isModified('password')){
+        user.password=await 
+    }
+
     next();
   })
 
