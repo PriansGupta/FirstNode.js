@@ -1,26 +1,35 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
 
-const User = mongoose.model("User", {
-  name: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    validate(value) {
-      if (!validator.isEmail(value)) {
-        throw new Error("Not a Valid Email");
-      }
+const UserSchema=new mongoose.Schema( {
+    name: {
+      type: String,
+      required: true,
     },
-  },
-  age: {
-    type: Number,
-    validate(value) {
-      if (value < 0) throw new Error("Age must be Positive");
+    email: {
+      type: String,
+      required: true,
+      validate(value) {
+        if (!validator.isEmail(value)) {
+          throw new Error("Not a Valid Email");
+        }
+      },
     },
-  },
-});
+    age: {
+      type: Number,
+      validate(value) {
+        if (value < 0) throw new Error("Age must be Positive");
+      },
+    },
+  });
+
+
+  UserSchema.pre('save',async function(next){
+    const user=this;
+    console.log("Before Saving")
+    next();
+  })
+
+const User = mongoose.model("User",UserSchema);
 
 module.exports = User;
