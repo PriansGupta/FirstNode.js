@@ -36,6 +36,8 @@ const UserSchema=new mongoose.Schema( {
       const user=await User.findOne({email})
    
       if(!user) throw new Error("No User Found")
+
+      const isMatch=await bcrypt.compare(password,user.password)
   }
 
   UserSchema.pre('save',async function(next){
