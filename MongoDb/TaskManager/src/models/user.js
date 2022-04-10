@@ -33,6 +33,10 @@ const UserSchema=new mongoose.Schema( {
     }
   });
 
+  UserSchema.methods.generateToken=async function(){
+      const user=this;
+      
+  }
 
   UserSchema.statics.findByCredentials=async (email,password)=>{
       const user=await User.findOne({email:email})
