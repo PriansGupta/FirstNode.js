@@ -35,7 +35,10 @@ const UserSchema=new mongoose.Schema( {
 
   UserSchema.methods.generateToken=async function(){
       const user=this;
-      
+
+      const token=jwt.sign({_id:user._id.toString()},"INeedToLearnThis")
+      console.log(token)
+return token
   }
 
   UserSchema.statics.findByCredentials=async (email,password)=>{
