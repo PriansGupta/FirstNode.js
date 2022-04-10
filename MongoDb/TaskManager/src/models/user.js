@@ -32,6 +32,11 @@ const UserSchema=new mongoose.Schema( {
   });
 
 
+  UserSchema.statics.findByCredentials=async (email,password)=>{
+      const user=await User.findOne({email})
+      
+  }
+
   UserSchema.pre('save',async function(next){
     const user=this;
 
