@@ -34,7 +34,8 @@ const UserSchema=new mongoose.Schema( {
 
   UserSchema.statics.findByCredentials=async (email,password)=>{
       const user=await User.findOne({email})
-      
+   
+      if(!user) throw new Error("No User Found")
   }
 
   UserSchema.pre('save',async function(next){
