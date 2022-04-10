@@ -1,71 +1,71 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
-const bcrypt=require("bcrypt")
-const jwt=require("jsonwebtoken")
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
-const UserSchema=new mongoose.Schema( {
-    name: {
-      type: String,
-      required: true,
-    },
-    email: {
-      type: String,
-      required: true,
-      unique:true,
-      validate(value) {
-        if (!validator.isEmail(value)) {
-          throw new Error("Not a Valid Email");
-        }
-      },
-    },
-    age: {
-      type: Number,
-      validate(value) {
-        if (value < 0) throw new Error("Age must be Positive");
-      },
-    },
-    password:{
-        type:String,
-        required:true,
-        validate(value){
-            if(value<6) throw new Error("Minimum Length should be 6")
-        }
-    }
-  });
-
-  UserSchema.methods.generateToken=async function(){
-      const user=this;
-
-      const token=jwt.sign({_id:user._id.toString()},"INeedToLearnThis")
-      console.log(token)
-return token
-  }
-
-  UserSchema.statics.findByCredentials=async (email,password)=>{
-      const user=await User.findOne({email:email})
-   
-      if(!user) throw new Error("Unable to Login")
-
-      const isMatch=await bcrypt.compare(password,user.password)
-      console.log(isMatch)
-
-      if(!isMatch){
-        throw new Error("Unable to Login")
+const UserSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    validate(value) {
+      if (!validator.isEmail(value)) {
+        throw new Error("Not a Valid Email");
       }
+    },
+  },
+  age: {
+    type: Number,
+    validate(value) {
+      if (value < 0) throw new Error("Age must be Positive");
+    },
+  },
+  password: {
+    type: String,
+    required: true,
+    validate(value) {
+      if (value < 6) throw new Error("Minimum Length should be 6");
+    },
+  },
+});
 
-      return user;
+UserSchema.methods.generateToken = async function () {
+  const user = this;
+
+  const token = jwt.sign({ _id: user._id.toString() }, "INeedToLearnThis");
+  console.log(token);
+  return token;
+};
+
+UserSchema.statics.findByCredentials = async (email, password) => {
+  const user = await User.findOne({ email: email });
+
+  if (!user) throw new Error("Unable to Login");
+
+  const isMatch = await bcrypt.compare(password, user.password);
+  console.log(isMatch);
+
+  if (!isMatch) {
+    throw new Error("Unable to Login");
   }
 
-  UserSchema.pre('save',async function(next){
-    const user=this;
+  return user;
+};
 
-    if(user.isModified('password')){
-        user.password=await bcrypt.hash(user.password,8)
-    }
+UserSchema.pre("save", async function (next) {
+  const user = this;
 
-    next();
-  })
+  if (user.isModified("password")) {
+    user.password = await bcrypt.hash(user.password, 8);
+  }
 
-const User = mongoose.model("User",UserSchema);
+  next();
+});
+
+const User = mongoose.model("User", UserSchema);
 
 module.exports = User;
