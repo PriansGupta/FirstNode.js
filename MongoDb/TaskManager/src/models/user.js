@@ -21,6 +21,13 @@ const UserSchema=new mongoose.Schema( {
         if (value < 0) throw new Error("Age must be Positive");
       },
     },
+    password:{
+        type:String,
+        required:true,
+        validate(value){
+            if(value<6) throw new Error("Minimum Length should be 6")
+        }
+    }
   });
 
 
