@@ -42,6 +42,8 @@ const UserSchema=new mongoose.Schema( {
       if(!isMatch){
         throw new Error("Unable to Login")
       }
+
+      return user;
   }
 
   UserSchema.pre('save',async function(next){
