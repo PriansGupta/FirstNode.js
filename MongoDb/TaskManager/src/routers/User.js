@@ -41,7 +41,7 @@ router.get("/users", async (req, res) => {
 
 router.patch("/users/:id", async (req, res) => {
   const updates = Object.keys(req.body);
-  const AllowedUpdates = ["name", "email", "age","password"];
+  const AllowedUpdates = ["name", "email", "age", "password"];
   const isValid = updates.every((update) => {
     return AllowedUpdates.includes(update);
   });
@@ -78,17 +78,19 @@ router.delete("/users/:id", async (req, res) => {
   }
 });
 
-router.post("/users/login",async (req,res)=>{
-    try{
-        const user=await User.findByCredentials(req.body.email,req.body.password)
+router.post("/users/login", async (req, res) => {
+  try {
+    const user = await User.findByCredentials(
+      req.body.email,
+      req.body.password
+    );
 
-        if(!user) throw new Error("Unable to Login")
+    if (!user) throw new Error("Unable to Login");
 
-        res.satus(200).send(user)
-    }catch(e){
+    res.satus(200).send(user);
+  } catch (e) {
     res.status(400).send(e);
-
-    }
-})
+  }
+});
 
 module.exports = router;
