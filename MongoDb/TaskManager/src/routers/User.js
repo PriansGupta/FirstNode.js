@@ -83,7 +83,10 @@ router.post("/users/login",async (req,res)=>{
         const user=await User.findByCredentials(req.body.email,req.body.password)
 
         if(!user) throw new Error("Unable to Login")
+
+        res.satus(200).send(user)
     }catch(e){
+    res.status(400).send(e);
 
     }
 })
