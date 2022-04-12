@@ -6,13 +6,16 @@ const auth = async (req, res, next) => {
     const token = req.header("Authorization").replace("Bearer ", "");
     const decoded = jwt.verify(token, "INeedToLearnThis");
 
-    const user = await User.findOne({ _id: decoded._id ,"tokens.token":token});
+    const user = await User.findOne({
+      _id: decoded._id,
+      "tokens.token": token,
+    });
 
-    if(!user){
-        throw new Error();
+    if (!user) {
+      throw new Error();
     }
 
-    req.user=user
+    req.user = user;
     console.log(user);
     next();
   } catch (e) {
