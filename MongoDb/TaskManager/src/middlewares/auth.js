@@ -5,7 +5,10 @@ const auth = async (req, res, next) => {
   try {
     const token = req.header("Authorization").replace("Bearer ","");
     const decoded=jwt.verify(token,"INeedToLearnThis")
-    console.log(token);
+
+    const user=await User.findOne({_id:decoded._id})
+
+    console.log(decoded);
   } catch (e) {
     res.status(401).send({ error: "Please Authenticate" });
   }
