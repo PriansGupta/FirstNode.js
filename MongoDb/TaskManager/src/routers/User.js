@@ -31,7 +31,6 @@ router.get("/users/:id", async (req, res) => {
 });
 
 router.get("/users",auth, async (req, res) => {
-//   try {
 
 
 res.send(req.user)
