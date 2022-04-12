@@ -81,7 +81,7 @@ router.delete("/users/:id", async (req, res) => {
   }
 });
 
-router.post("/users/login",auth, async (req, res) => {
+router.post("/users/login", async (req, res) => {
   try {
     const user = await User.findByCredentials(
       req.body.email,
