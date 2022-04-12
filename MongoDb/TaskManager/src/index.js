@@ -9,9 +9,7 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 
 app.use((req,res,next)=>{
-  
-    console.log(req.method,req.path)
-    next();
+  res.send("Site is under maintenance.Please try Later")
 })
 
 app.use(UserRouter);
