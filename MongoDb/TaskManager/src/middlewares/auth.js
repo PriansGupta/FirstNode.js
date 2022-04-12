@@ -14,10 +14,10 @@ const auth = async (req, res, next) => {
 
     req.user=user
     console.log(user);
+    next();
   } catch (e) {
     res.status(401).send({ error: "Please Authenticate" });
   }
-  next();
 };
 
 module.exports = auth;

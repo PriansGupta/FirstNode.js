@@ -31,15 +31,17 @@ router.get("/users/:id", async (req, res) => {
 });
 
 router.get("/users",auth, async (req, res) => {
-  try {
-    const users = await User.find({});
+//   try {
+//     const users = await User.find({});
 
-    if (!users) return res.status(400).send();
+//     if (!users) return res.status(400).send();
 
-    res.status(200).send(users);
-  } catch (e) {
-    res.status(500).send(e);
-  }
+//     res.status(200).send(users);
+//   } catch (e) {
+//     res.status(500).send(e);
+//   }
+
+res.send(req.user)
 });
 
 router.patch("/users/:id", async (req, res) => {
