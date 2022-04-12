@@ -31,10 +31,11 @@ const UserSchema = new mongoose.Schema({
       if (value < 6) throw new Error("Minimum Length should be 6");
     },
   },
-  tokens:[{
-      token:{type:String,
-      required:true
-  }}],
+  tokens: [
+    {
+      token: { type: String, required: true },
+    },
+  ],
 });
 
 UserSchema.methods.generateToken = async function () {
@@ -42,7 +43,7 @@ UserSchema.methods.generateToken = async function () {
 
   const token = jwt.sign({ _id: user._id.toString() }, "INeedToLearnThis");
 
-  user.tokens=user.tokens.concat({token})
+  user.tokens = user.tokens.concat({ token });
   await user.save();
   return token;
 };

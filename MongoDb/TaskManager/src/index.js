@@ -8,9 +8,6 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
-// app.use((req,res,next)=>{
-//   res.status(503).send("Site is under maintenance.Please try Later")
-// })
 
 app.use(UserRouter);
 app.use(TaskRouter);
