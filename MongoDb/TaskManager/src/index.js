@@ -8,8 +8,11 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
-app.use(UserRouter);
+app.use((req,res,next)=>{
+    
+})
 
+app.use(UserRouter);
 app.use(TaskRouter);
 
 app.listen(port, () => {
