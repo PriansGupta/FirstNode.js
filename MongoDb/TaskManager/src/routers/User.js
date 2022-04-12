@@ -34,8 +34,6 @@ router.get("/users",auth, async (req, res) => {
 //   try {
 //     const users = await User.find({});
 
-//     if (!users) return res.status(400).send();
-
 
 res.send(req.user)
 });
