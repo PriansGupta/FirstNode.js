@@ -37,7 +37,6 @@ router.get("/users",auth, async (req, res) => {
 //     if (!users) return res.status(400).send();
 
 //     res.status(200).send(users);
-//   } catch (e) {
 
 
 res.send(req.user)
