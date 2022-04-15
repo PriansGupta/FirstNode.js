@@ -86,18 +86,18 @@ router.post("/users/login", async (req, res) => {
   }
 });
 
-router.post("/users/logout",auth,async (req,res)=>{
-    try{
-req.user.tokens=req.users.tokens.filter((token)=>{
-    return token!==req.token
-})
+router.post("/users/logout", auth, async (req, res) => {
+  try {
+    req.user.tokens = req.users.tokens.filter((token) => {
+      return token !== req.token;
+    });
 
-await req.user.save();
+    await req.user.save();
 
-res.send()
-    }catch(e){
-res.status(500).send()
-    }
-})
+    res.send();
+  } catch (e) {
+    res.status(500).send();
+  }
+});
 
 module.exports = router;
