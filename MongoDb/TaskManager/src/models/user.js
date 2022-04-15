@@ -53,6 +53,7 @@ UserSchema.methods.getPublicProfile=function(){
 
     const userObject=user.toObject();
 
+    delete userObject.password
     return userObject
 }
 
