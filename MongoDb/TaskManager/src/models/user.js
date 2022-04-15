@@ -52,6 +52,8 @@ UserSchema.methods.getPublicProfile=function(){
     const user=this
 
     const userObject=user.toObject();
+
+    return userObject
 }
 
 UserSchema.statics.findByCredentials = async (email, password) => {
