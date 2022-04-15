@@ -93,8 +93,10 @@ req.user.tokens=req.users.tokens.filter((token)=>{
 })
 
 await req.user.save();
-    }catch(e){
 
+res.send()
+    }catch(e){
+res.status(500).send()
     }
 })
 
