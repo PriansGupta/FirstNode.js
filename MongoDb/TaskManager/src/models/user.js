@@ -50,6 +50,8 @@ UserSchema.methods.generateToken = async function () {
 
 UserSchema.methods.getPublicProfile=function(){
     const user=this
+
+    const userObject=user.toObject();
 }
 
 UserSchema.statics.findByCredentials = async (email, password) => {
