@@ -9,7 +9,7 @@ router.post("/users", async (req, res) => {
   try {
     await user.save();
     const token = await user.generateToken();
-    res.status(201).send({ user:user.getPublicProfile(), token });
+    res.status(201).send({ user, token });
   } catch (e) {
     res.status(404).send(e);
   }
@@ -80,7 +80,7 @@ router.post("/users/login", async (req, res) => {
     );
     const token = await user.generateToken();
 
-    res.send({ user:user.getPublicProfile(), token });
+    res.send({ user, token });
   } catch (e) {
     res.status(400).send(e);
   }
