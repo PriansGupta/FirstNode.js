@@ -88,9 +88,11 @@ router.post("/users/login", async (req, res) => {
 
 router.post("/users/logout",auth,async (req,res)=>{
     try{
-
+req.user.tokens=req.users.tokens.filter((token)=>{
+    
+})
     }catch(e){
-        
+
     }
 })
 
