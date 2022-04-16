@@ -13,10 +13,10 @@ const Task = mongoose.model("Tasks", {
     type: Boolean,
     required: true,
   },
-  Owner:{
-      type:mongoose.Schema.Types.ObjectId,
-      required:true,
-  }
+  Owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+  },
 });
 
 module.exports = Task;
