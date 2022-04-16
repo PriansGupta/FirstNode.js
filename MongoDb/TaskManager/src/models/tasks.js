@@ -1,3 +1,4 @@
+const { Mongoose } = require("mongoose");
 const mongoose = require("mongoose");
 
 const Task = mongoose.model("Tasks", {
@@ -13,6 +14,9 @@ const Task = mongoose.model("Tasks", {
     type: Boolean,
     required: true,
   },
+  Owner:{
+      type:Mongoose.Schema.Types.ObjectId,
+  }
 });
 
 module.exports = Task;
