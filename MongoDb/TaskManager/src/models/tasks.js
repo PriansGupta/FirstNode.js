@@ -16,6 +16,7 @@ const Task = mongoose.model("Tasks", {
   },
   Owner:{
       type:Mongoose.Schema.Types.ObjectId,
+      required:true,
   }
 });
 
