@@ -63,7 +63,7 @@ router.patch("/users/:id", async (req, res) => {
 router.delete("/users",auth, async (req, res) => {
   try {
 
-    res.status(200).send(user);
+    res.send(req.user);
   } catch (e) {
     res.status(400).send(e);
   }
