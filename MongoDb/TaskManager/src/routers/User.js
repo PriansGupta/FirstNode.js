@@ -51,9 +51,6 @@ router.patch("/users",auth, async (req, res) => {
 
     await user.save();
 
-    if (!user) {
-      return res.status(400).send(e);
-    }
     res.send(user);
   } catch (e) {
     res.status(400).send(e);
