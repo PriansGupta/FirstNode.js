@@ -1,4 +1,3 @@
-const { Mongoose } = require("mongoose");
 const mongoose = require("mongoose");
 
 const Task = mongoose.model("Tasks", {
@@ -15,7 +14,7 @@ const Task = mongoose.model("Tasks", {
     required: true,
   },
   Owner:{
-      type:Mongoose.Schema.Types.ObjectId,
+      type:mongoose.Schema.Types.ObjectId,
       required:true,
   }
 });
