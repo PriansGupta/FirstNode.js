@@ -33,7 +33,7 @@ router.get("/users", auth, async (req, res) => {
   res.send(req.user);
 });
 
-router.patch("/users/:id", async (req, res) => {
+router.patch("/users",auth, async (req, res) => {
   const updates = Object.keys(req.body);
   const AllowedUpdates = ["name", "email", "age", "password"];
   const isValid = updates.every((update) => {
