@@ -60,9 +60,8 @@ router.patch("/users/:id", async (req, res) => {
   }
 });
 
-router.delete("/users",auth, async (req, res) => {
+router.delete("/users", auth, async (req, res) => {
   try {
-
     await req.user.remove();
 
     res.send(req.user);
