@@ -18,6 +18,9 @@ const TaskSchema=new Schema( {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
     },
+  },
+  {
+      timestamps:true
   })
 
 const Task = mongoose.model("Tasks",TaskSchema);
