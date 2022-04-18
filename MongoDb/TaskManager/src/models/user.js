@@ -3,7 +3,6 @@ const validator = require("validator");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -39,11 +38,11 @@ const UserSchema = new mongoose.Schema({
   ],
 });
 
-UserSchema.virtual("tasks",{
-    ref:"Task",
-    localField:"_id",
-    foreignField:"Owner"
-})
+UserSchema.virtual("tasks", {
+  ref: "Task",
+  localField: "_id",
+  foreignField: "Owner",
+});
 
 UserSchema.methods.generateToken = async function () {
   const user = this;
@@ -55,16 +54,16 @@ UserSchema.methods.generateToken = async function () {
   return token;
 };
 
-UserSchema.methods.toJSON=function(){
-    const user=this
+UserSchema.methods.toJSON = function () {
+  const user = this;
 
-    const userObject=user.toObject();
+  const userObject = user.toObject();
 
-    delete userObject.password
-    delete userObject.tokens
+  delete userObject.password;
+  delete userObject.tokens;
 
-    return userObject
-}
+  return userObject;
+};
 
 UserSchema.statics.findByCredentials = async (email, password) => {
   const user = await User.findOne({ email: email });
