@@ -44,13 +44,12 @@ router.patch("/users", auth, async (req, res) => {
 
   try {
     const user = req.user;
-
+    
     updates.forEach((update) => {
       user[update] = req.body[update];
     });
 
     await user.save();
-
     res.send(user);
   } catch (e) {
     res.status(400).send(e);
