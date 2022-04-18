@@ -40,8 +40,9 @@ router.get("/tasks",auth,(req,res)=>{
     try{
 
         await req.user.populate("tasks").execPopulate()
+        res.send(req.user.tasks)
     }catch(e){
-
+res.status(500).send();
     }
 
 })
