@@ -38,6 +38,10 @@ const UserSchema = new mongoose.Schema({
   ],
 });
 
+UserSchema.pre("remove",async function(next){
+
+})
+
 UserSchema.virtual("tasks", {
   ref: "Task",
   localField: "_id",
