@@ -38,6 +38,10 @@ const UserSchema = new mongoose.Schema({
   ],
 });
 
+UserSchema.virtual("tasks",{
+    ref:"Tasks"
+})
+
 UserSchema.methods.generateToken = async function () {
   const user = this;
 
