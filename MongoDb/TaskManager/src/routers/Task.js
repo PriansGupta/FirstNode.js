@@ -39,8 +39,9 @@ router.get("/tasks",auth,(req,res)=>{
 
     try{
 
+        await req.user.populate("tasks").execPopulate()
     }catch(e){
-        
+
     }
 
 })
