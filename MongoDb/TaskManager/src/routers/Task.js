@@ -33,7 +33,7 @@ router.get("/tasks/:id", auth, async (req, res) => {
   }
 });
 
-router.get("/tasks", auth, (req, res) => {
+router.get("/tasks", auth, async (req, res) => {
   try {
     await req.user.populate("tasks").execPopulate();
     res.send(req.user.tasks);
