@@ -17,7 +17,7 @@ router.post("/tasks", auth, async (req, res) => {
   }
 });
 
-router.get("/tasks/:id", async (req, res) => {
+router.get("/tasks/:id",auth, async (req, res) => {
   try {
     const task = await Task.findOne({_id,owner:req.user._id});
 
