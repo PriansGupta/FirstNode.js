@@ -13,5 +13,5 @@ app.use(UserRouter);
 app.use(TaskRouter);
 
 app.listen(port, () => {
-  console.log("Hurray!!...Server is Running");
+  console.log("");
 });
