@@ -39,13 +39,11 @@ const UserSchema = new mongoose.Schema({
   ],
 });
 
-UserSchema.pre("remove",async function(next){
-
-    const user=this;
-    await Task.deleteMany({owner:user._id})
-    next();
-
-})
+UserSchema.pre("remove", async function (next) {
+  const user = this;
+  await Task.deleteMany({ owner: user._id });
+  next();
+});
 
 UserSchema.virtual("tasks", {
   ref: "Task",
