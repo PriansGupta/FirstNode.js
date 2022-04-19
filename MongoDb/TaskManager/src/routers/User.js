@@ -1,7 +1,7 @@
 const express = require("express");
 const User = require("../models/user");
-const router = new express.Router();
 const auth = require("../middlewares/auth");
+const router = new express.Router();
 
 router.post("/users", async (req, res) => {
   const user = new User(req.body);
@@ -44,7 +44,7 @@ router.patch("/users", auth, async (req, res) => {
 
   try {
     const user = req.user;
-    
+
     updates.forEach((update) => {
       user[update] = req.body[update];
     });
