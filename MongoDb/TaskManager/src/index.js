@@ -13,5 +13,5 @@ app.use(UserRouter);
 app.use(TaskRouter);
 
 app.listen(port, () => {
-  console.log("Server is Up");
+  console.log("Server is Up on"+port);
 });
