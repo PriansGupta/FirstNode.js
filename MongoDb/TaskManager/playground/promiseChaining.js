@@ -11,7 +11,7 @@ User.findByIdAndUpdate("62449d528a95f03e701d7c02", { age: 47 })
     console.log(result);
   })
   .catch((e) => {
-    console.log(e);
+    
   });
 
 Task.findByIdAndDelete("62499dc7b471a4178c993b71")
