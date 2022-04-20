@@ -22,5 +22,4 @@ Task.findByIdAndDelete("62499dc7b471a4178c993b71")
   .then((result) => {
 
   })
-  .catch((e) => {
-  });
+  
