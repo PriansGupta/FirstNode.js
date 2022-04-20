@@ -4,7 +4,7 @@ const Task = require("../src/models/tasks");
 
 User.findByIdAndUpdate("62449d528a95f03e701d7c02", { age: 47 })
   .then((user) => {
-    console.log(user);
+    
     
   })
   .then((result) => {
