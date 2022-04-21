@@ -8,7 +8,6 @@ const database = "taskManager";
 const id = new ObjectID();
 
 
-
 MongoClient.connect(
   connectionURL,
   { useNewUrlParser: true },
