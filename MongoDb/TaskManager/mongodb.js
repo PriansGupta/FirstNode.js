@@ -1,4 +1,3 @@
-//CRUD
 
 const { MongoClient, ObjectID } = require("mongodb");
 
