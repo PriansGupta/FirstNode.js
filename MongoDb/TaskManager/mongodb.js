@@ -7,7 +7,7 @@ const database = "taskManager";
 
 const id = new ObjectID();
 console.log("OBJECT ID:" + id);
-console.log(id.getTimestamp());
+
 
 MongoClient.connect(
   connectionURL,
