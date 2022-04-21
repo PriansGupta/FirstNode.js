@@ -9,7 +9,7 @@ MongoClient.connect(
   { useNewUrlParser: true },
   (error, client) => {
     if (error) {
-      return console.log("UNABLE TO CONNECT TO THE DATABASE");
+      return console.log("Unable to connect to database");
     }
 
     console.log("Connected");
