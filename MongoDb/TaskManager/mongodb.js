@@ -12,7 +12,7 @@ MongoClient.connect(
       return console.log("Unable to connect to database");
     }
 
-    console.log("Connected");
+    console.log("Connect");
 
     const db = client.db(database);
 
