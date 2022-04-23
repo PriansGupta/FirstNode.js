@@ -4,6 +4,10 @@ const auth = require("../middlewares/auth");
 const router = new express.Router();
 const multer=require("multer")
 
+const upload=multer({
+  dest:"images"
+})
+
 router.post("/users", async (req, res) => {
   const user = new User(req.body);
 
