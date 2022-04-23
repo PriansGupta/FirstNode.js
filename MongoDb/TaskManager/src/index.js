@@ -13,9 +13,6 @@ app.use(express.json());
 app.use(UserRouter);
 app.use(TaskRouter);
 
-const upload = multer({
-  dest: "images",
-});
 
 
 app.listen(port, () => {
