@@ -10,7 +10,12 @@ const upload=multer({
     fileSize:1000000
   },
   fileFilter(req,file,cb){
-    
+    if(!file.originalname.endsWith(".jpg"))
+    {
+      return cb(new Error("Please upload an Image"))
+    }
+
+    cb(undefined,true)
   }
 })
 
