@@ -111,7 +111,7 @@ router.post("/users/logout", auth, async (req, res) => {
 router.post("/users/upload/avatar", upload.single("avatar"), (req, res) => {
   res.send();
 },(error,req,res,next)=>{
-  
+  res.status(400).send({error:error.message})
 });
 
 module.exports = router;
