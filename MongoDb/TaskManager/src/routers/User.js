@@ -102,4 +102,5 @@ router.post("/users/upload/avatar",upload.single("avatar"),(req,res)=>{
   res.send()
 })
 
+  
 module.exports = router;
