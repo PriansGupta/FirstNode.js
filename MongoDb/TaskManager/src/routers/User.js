@@ -113,7 +113,7 @@ router.post(
   upload.single("avatar"),
   async (req, res) => {
     req.user.avatar = req.file.buffer;
-    await req.user.save;
+    await req.user.save();
     res.send();
   },
   (error, req, res, next) => {
