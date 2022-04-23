@@ -99,7 +99,7 @@ router.post("/users/logout", auth, async (req, res) => {
 });
 
 router.post("/users/upload/avatar",upload.single("avatar"),(req,res)=>{
-  
+  res.send()
 })
 
 module.exports = router;
