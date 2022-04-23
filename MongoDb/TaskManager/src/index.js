@@ -18,8 +18,8 @@ const upload=multer({
   dest:"images"
 })
 
-app.post("/upload",(req,res)=>{
-  
+app.post("/upload",upload.single("upload"),(req,res)=>{
+
 })
 
 app.listen(port, () => {
