@@ -1,7 +1,6 @@
 const express = require("express");
 const UserRouter = require("../src/routers/User");
 const TaskRouter = require("../src/routers/Task");
-const multer = require("multer");
 
 require("../src/db/mongoose");
 
@@ -12,8 +11,6 @@ app.use(express.json());
 
 app.use(UserRouter);
 app.use(TaskRouter);
-
-
 
 app.listen(port, () => {
   console.log("Server is Up on " + port);
