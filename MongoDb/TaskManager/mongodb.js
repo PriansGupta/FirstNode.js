@@ -32,7 +32,7 @@ MongoClient.connect(
         console.log("Result: " + result);
       })
       .catch((error) => {
-        console.log("Error: " + error);
+        console.log(error);
       });
 
     db.collection("Tasks")
