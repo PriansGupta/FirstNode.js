@@ -19,7 +19,7 @@ const upload=multer({
 })
 
 app.post("/upload",upload.single("upload"),(req,res)=>{
-
+res.send();
 })
 
 app.listen(port, () => {
