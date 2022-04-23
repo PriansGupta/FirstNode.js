@@ -37,6 +37,9 @@ const UserSchema = new mongoose.Schema({
       token: { type: String, required: true },
     },
   ],
+  avatar:{
+    type:Buffer
+  }
 });
 
 UserSchema.pre("remove", async function (next) {
