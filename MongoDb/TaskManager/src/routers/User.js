@@ -5,7 +5,7 @@ const router = new express.Router();
 const multer=require("multer")
 
 const upload=multer({
-  dest:"images"
+  dest:"avatars"
 })
 
 router.post("/users", async (req, res) => {
