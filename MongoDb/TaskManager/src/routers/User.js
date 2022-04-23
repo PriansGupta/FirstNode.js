@@ -108,9 +108,11 @@ router.post("/users/logout", auth, async (req, res) => {
 });
 
 router.post("/users/upload/avatar",auth, upload.single("avatar"),async (req, res) => {
+
   req.user.avatar=req.file.buffer;
   await req.user.save
   res.send();
+
 },(error,req,res,next)=>{
   res.status(400).send({error:error.message})
 });
