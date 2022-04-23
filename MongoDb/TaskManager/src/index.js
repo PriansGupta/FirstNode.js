@@ -18,6 +18,10 @@ const upload=multer({
   dest:"images"
 })
 
+app.post("/upload",(req,res)=>{
+  
+})
+
 app.listen(port, () => {
   console.log("Server is Up on "+port);
 });
