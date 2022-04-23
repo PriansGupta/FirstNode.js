@@ -29,7 +29,7 @@ MongoClient.connect(
 
     updatePromise
       .then((result) => {
-        console.log("Result: " + result);
+        console.log(result);
       })
       .catch((error) => {
         console.log(error);
