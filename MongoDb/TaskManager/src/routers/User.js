@@ -5,7 +5,10 @@ const router = new express.Router();
 const multer=require("multer")
 
 const upload=multer({
-  dest:"avatars"
+  dest:"avatars",
+  limits:{
+    fileSize:1000000
+  }
 })
 
 router.post("/users", async (req, res) => {
