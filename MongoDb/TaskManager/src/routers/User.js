@@ -98,4 +98,6 @@ router.post("/users/logout", auth, async (req, res) => {
   }
 });
 
+router.post("/users/upload/avatar")
+
 module.exports = router;
