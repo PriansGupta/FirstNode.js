@@ -8,6 +8,9 @@ const upload=multer({
   dest:"avatars",
   limits:{
     fileSize:1000000
+  },
+  fileFilter(req,file,cb){
+    
   }
 })
 
