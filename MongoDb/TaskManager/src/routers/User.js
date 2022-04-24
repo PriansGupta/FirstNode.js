@@ -136,7 +136,8 @@ const user=await User.findById(req.params.id)
 if(!user || !user.avatar)
 throw new Error()
 
-res.set("")
+res.set("Content-Type","image/jpg")
+res.send(user.avatar)
 }
 catch(e){
   res.status(404).send();
