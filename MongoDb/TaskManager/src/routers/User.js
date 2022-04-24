@@ -130,7 +130,12 @@ router.delete("/users/upload/avatar",auth,async (req,res)=>{
 
 
 router.get("/users/:id/avatar", async (req,res)=>{
+try{
 
+}
+catch(e){
+  res.status(404).send();
+}
 })
 
 module.exports = router;
